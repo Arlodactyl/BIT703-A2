@@ -1,6 +1,7 @@
 /* ================================================
    BIT703 - Assessment 2
    Arleia Hebberd - Student Number: 5030710
+   Custom CSS for Aotearoa Adventure Gear
    ================================================ */
 
 /* -- Colour variables, change brand colours here -- */
@@ -56,4 +57,69 @@ a:hover {
     color: var(--primary-colour);
     margin-bottom: 30px;
     text-align: center;
+}
+
+/* -- Navbar logo size -- */
+.navbar-brand img {
+    height: 70px;
+}
+
+/* -- Makes all product card images the same height -- */
+.product-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* -- Makes hero images all same height -- */
+.hero-section img {
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* -- Makes carousel product images consistent -- */
+.carousel .card-img-top {
+    height: 300px;
+    object-fit: cover;
+}
+
+/* -- Product card text styling -- */
+.product-name {
+    font-weight: 600;
+    color: var(--text-colour);
+    margin-bottom: 5px;
+}
+
+.product-price {
+    color: var(--primary-colour);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* -- Star rating colour -- */
+.star-rating {
+    color: #f4a61d;
+    margin-bottom: 5px;
+}
+
+/* -- Responsive adjustments for smaller screens -- */
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-section img {
+        height: 160px;
+    }
+
+    .product-card .card-img-top {
+        height: 160px;
+    }
+}
+
+/* -- Medium screens -- */
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 40px 0;
+    }
 }
