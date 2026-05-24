@@ -122,4 +122,30 @@ a:hover {
     .section-padding {
         padding: 40px 0;
     }
+ /* -- Carousel arrows changed to dark so they show up on light backgrounds -- */
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: var(--primary-colour);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+.carousel-control-prev {
+    left: -20px;
+}
+
+.carousel-control-next {
+    right: -20px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: none;
+    background-color: transparent;
+    padding: 0;
+}
 }
