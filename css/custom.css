@@ -143,6 +143,13 @@ a:hover {
     object-position: center;
 }
 
+/* -- Newsletter image - small and to the left -- */
+.newsletter-img {
+    height: 150px;
+    object-fit: cover;
+    width: 100%;
+}
+
 /* -- Responsive adjustments for smaller screens -- */
 @media (max-width: 576px) {
     .section-title {

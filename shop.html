@@ -9,10 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop - Aotearoa Adventure Gear</title>
-
-    <!-- Bootstrap CSS - stored locally -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Custom styles -->
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
@@ -44,11 +41,11 @@
         <div class="container">
             <h1 class="section-title">New Zealand's Premier Adventure Gear Store</h1>
             <hr class="mx-auto" style="width: 60px; border-top: 3px solid var(--primary-colour);">
-            <!-- Main shop search bar -->
             <div class="row justify-content-center mt-4">
-                <div class="col-12 col-md-7">
+                <div class="col-12 col-md-8">
                     <div class="input-group">
-                        <input type="search" id="shopSearch" class="form-control form-control-lg" placeholder="Search...">
+                        <span class="input-group-text bg-white">🔍</span>
+                        <input type="search" id="shopSearch" class="form-control form-control-lg border-start-0" placeholder="Search...">
                         <button class="btn btn-brand btn-lg" onclick="searchProducts()">Submit</button>
                     </div>
                     <small id="searchError" class="text-danger"></small>
@@ -58,41 +55,41 @@
     </section>
 
     <!-- == FEATURED CATEGORIES == -->
-    <section class="section-padding">
+    <section class="section-padding" style="border-bottom: 1px solid #dee2e6;">
         <div class="container">
             <h2 class="section-title">Featured Categories</h2>
             <p class="text-center text-muted mb-4">Browse our range of premium outdoor adventure gear</p>
 
-            <div class="row justify-content-center">
+            <div class="row g-3 justify-content-center">
                 <!-- Category 1 -->
-                <div class="col-6 col-md-3 mb-4 text-center">
-                    <div class="card category-card">
-                        <img src="images/product1.jpg" class="card-img-top" alt="Packs">
+                <div class="col-6 col-md-3 text-center">
+                    <div class="category-card border">
+                        <img src="images/product1.jpg" alt="Packs">
                     </div>
-                    <p class="mt-2 fw-bold">PACKS</p>
+                    <p class="mt-2 fw-bold small">PACKS</p>
                 </div>
 
                 <!-- Category 2 -->
-                <div class="col-6 col-md-3 mb-4 text-center">
-                    <div class="card category-card">
-                        <img src="images/product2.jpg" class="card-img-top" alt="Footwear">
+                <div class="col-6 col-md-3 text-center">
+                    <div class="category-card border">
+                        <img src="images/product2.jpg" alt="Footwear">
                     </div>
-                    <p class="mt-2 fw-bold">FOOTWEAR</p>
+                    <p class="mt-2 fw-bold small">FOOTWEAR</p>
                 </div>
 
                 <!-- Category 3 -->
-                <div class="col-6 col-md-3 mb-4 text-center">
-                    <div class="card category-card">
-                        <img src="images/product3.jpg" class="card-img-top" alt="Shelter">
+                <div class="col-6 col-md-3 text-center">
+                    <div class="category-card border">
+                        <img src="images/product3.jpg" alt="Shelter">
                     </div>
-                    <p class="mt-2 fw-bold">SHELTER</p>
+                    <p class="mt-2 fw-bold small">SHELTER</p>
                 </div>
 
-                <!-- Shop now button as 4th box -->
-                <div class="col-6 col-md-3 mb-4 text-center">
-                    <div class="card d-flex align-items-center justify-content-center" 
-                        style="background-color: var(--primary-colour); height: 150px;">
-                        <a href="#products" class="btn btn-light btn-lg">Shop Now</a>
+                <!-- Shop now box -->
+                <div class="col-6 col-md-3">
+                    <div class="d-flex align-items-center justify-content-center h-100"
+                        style="background-color: var(--primary-colour); min-height: 150px;">
+                        <a href="#products" class="btn btn-light">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -100,18 +97,21 @@
     </section>
 
     <!-- == NEWSLETTER SECTION == -->
-    <section style="background-color: var(--accent-colour);">
+    <section style="background-color: var(--accent-colour); border-bottom: 1px solid #dee2e6;">
         <div class="container">
             <div class="row align-items-center py-4">
-                <!-- Left image -->
-                <div class="col-12 col-md-4 mb-3">
-                    <img src="images/hero1.jpg" class="img-fluid rounded" alt="Adventure">
+                <!-- Small square image on left -->
+                <div class="col-4 col-md-3">
+                    <img src="images/hero1.jpg"
+                        style="width:100%; height:120px; object-fit:cover;"
+                        class="rounded" alt="Adventure">
                 </div>
-                <!-- Newsletter signup -->
-                <div class="col-12 col-md-8">
-                    <h3>Newsletter</h3>
-                    <div class="input-group mt-2" style="max-width: 400px;">
-                        <input type="email" id="newsletterEmail" class="form-control" placeholder="Email Address" required>
+                <!-- Newsletter form -->
+                <div class="col-8 col-md-9">
+                    <h4>Newsletter</h4>
+                    <div class="input-group" style="max-width: 350px;">
+                        <input type="email" id="newsletterEmail" class="form-control" 
+                            placeholder="Email Address" required>
                         <button class="btn btn-brand" onclick="subscribeNewsletter()">Subscribe</button>
                     </div>
                     <small id="newsletterError" class="text-danger"></small>
@@ -119,85 +119,110 @@
             </div>
         </div>
     </section>
-<!-- == PRODUCTS SECTION == -->
-    <section class="section-padding" id="products" style="background-color: #f9f9f9;">
-        <div class="container-fluid px-4">
+
+    <!-- == PRODUCTS SECTION == -->
+    <section class="section-padding" id="products" style="border-bottom: 1px solid #dee2e6;">
+        <div class="container">
             <div class="row">
-                <!-- Left side header and browse all -->
+                <!-- Left side - header text -->
                 <div class="col-12 col-md-3 mb-4">
-                    <h3 style="color: var(--primary-colour);">Adventure Gear</h3>
-                    <p class="text-muted">Browse our full range of premium New Zealand adventure gear and equipment.</p>
-                    <a href="#" class="btn btn-brand">Browse All</a>
+                    <h3 style="color: var(--primary-colour); font-size: 1.8rem;">Header Regarding Your Product</h3>
+                    <p class="text-muted small">Browse our full range of premium New Zealand adventure gear and equipment.</p>
+                    <a href="#" class="btn btn-brand btn-sm">Browse All</a>
                 </div>
 
-                <!-- Right side product grid - small thumbnail style like wireframe -->
+                <!-- Right side - product list matching wireframe style -->
                 <div class="col-12 col-md-9">
-                    <div class="row">
+                    <div class="row g-2">
 
-                        <div class="col-6 col-md-6 mb-3">
-                            <div class="card product-card flex-row align-items-center p-2">
-                                <img src="images/product1.jpg" style="width:80px; height:80px; object-fit:cover;" class="rounded me-3" alt="Product">
-                                <div>
-                                    <p class="product-name mb-1">Alpine Hiking Pack</p>
-                                    <div class="star-rating small">★★★☆☆</div>
-                                    <p class="product-price mb-0">$299</p>
+                        <div class="col-12 col-md-6">
+                            <a href="product.html" class="text-decoration-none text-dark">
+                                <div class="d-flex align-items-center border p-2 mb-2">
+                                    <img src="images/product1.jpg" 
+                                        style="width:70px; height:70px; object-fit:cover;" 
+                                        class="me-3" alt="Product">
+                                    <div>
+                                        <p class="product-name mb-0 small">Alpine Hiking Pack</p>
+                                        <div class="star-rating" style="font-size:0.75rem;">★★★☆☆</div>
+                                        <p class="product-price mb-0 small">$299</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
-                        <div class="col-6 col-md-6 mb-3">
-                            <div class="card product-card flex-row align-items-center p-2">
-                                <img src="images/product2.jpg" style="width:80px; height:80px; object-fit:cover;" class="rounded me-3" alt="Product">
-                                <div>
-                                    <p class="product-name mb-1">Trail Running Shoes</p>
-                                    <div class="star-rating small">★★★☆☆</div>
-                                    <p class="product-price mb-0">$189</p>
+                        <div class="col-12 col-md-6">
+                            <a href="product.html" class="text-decoration-none text-dark">
+                                <div class="d-flex align-items-center border p-2 mb-2">
+                                    <img src="images/product2.jpg" 
+                                        style="width:70px; height:70px; object-fit:cover;" 
+                                        class="me-3" alt="Product">
+                                    <div>
+                                        <p class="product-name mb-0 small">Trail Running Shoes</p>
+                                        <div class="star-rating" style="font-size:0.75rem;">★★★☆☆</div>
+                                        <p class="product-price mb-0 small">$189</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
-                        <div class="col-6 col-md-6 mb-3">
-                            <div class="card product-card flex-row align-items-center p-2">
-                                <img src="images/product3.jpg" style="width:80px; height:80px; object-fit:cover;" class="rounded me-3" alt="Product">
-                                <div>
-                                    <p class="product-name mb-1">Waterproof Tent</p>
-                                    <div class="star-rating small">★★★☆☆</div>
-                                    <p class="product-price mb-0">$549</p>
+                        <div class="col-12 col-md-6">
+                            <a href="product.html" class="text-decoration-none text-dark">
+                                <div class="d-flex align-items-center border p-2 mb-2">
+                                    <img src="images/product3.jpg" 
+                                        style="width:70px; height:70px; object-fit:cover;" 
+                                        class="me-3" alt="Product">
+                                    <div>
+                                        <p class="product-name mb-0 small">Waterproof Tent</p>
+                                        <div class="star-rating" style="font-size:0.75rem;">★★★☆☆</div>
+                                        <p class="product-price mb-0 small">$549</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
-                        <div class="col-6 col-md-6 mb-3">
-                            <div class="card product-card flex-row align-items-center p-2">
-                                <img src="images/product4.jpg" style="width:80px; height:80px; object-fit:cover;" class="rounded me-3" alt="Product">
-                                <div>
-                                    <p class="product-name mb-1">Sleeping Bag</p>
-                                    <div class="star-rating small">★★★☆☆</div>
-                                    <p class="product-price mb-0">$229</p>
+                        <div class="col-12 col-md-6">
+                            <a href="product.html" class="text-decoration-none text-dark">
+                                <div class="d-flex align-items-center border p-2 mb-2">
+                                    <img src="images/product4.jpg" 
+                                        style="width:70px; height:70px; object-fit:cover;" 
+                                        class="me-3" alt="Product">
+                                    <div>
+                                        <p class="product-name mb-0 small">Sleeping Bag</p>
+                                        <div class="star-rating" style="font-size:0.75rem;">★★★☆☆</div>
+                                        <p class="product-price mb-0 small">$229</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
-                        <div class="col-6 col-md-6 mb-3">
-                            <div class="card product-card flex-row align-items-center p-2">
-                                <img src="images/product5.jpg" style="width:80px; height:80px; object-fit:cover;" class="rounded me-3" alt="Product">
-                                <div>
-                                    <p class="product-name mb-1">Climbing Rope</p>
-                                    <div class="star-rating small">★★★☆☆</div>
-                                    <p class="product-price mb-0">$149</p>
+                        <div class="col-12 col-md-6">
+                            <a href="product.html" class="text-decoration-none text-dark">
+                                <div class="d-flex align-items-center border p-2 mb-2">
+                                    <img src="images/product5.jpg" 
+                                        style="width:70px; height:70px; object-fit:cover;" 
+                                        class="me-3" alt="Product">
+                                    <div>
+                                        <p class="product-name mb-0 small">Climbing Rope</p>
+                                        <div class="star-rating" style="font-size:0.75rem;">★★★☆☆</div>
+                                        <p class="product-price mb-0 small">$149</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
-                        <div class="col-6 col-md-6 mb-3">
-                            <div class="card product-card flex-row align-items-center p-2">
-                                <img src="images/product6.jpg" style="width:80px; height:80px; object-fit:cover;" class="rounded me-3" alt="Product">
-                                <div>
-                                    <p class="product-name mb-1">Outdoor Jacket</p>
-                                    <div class="star-rating small">★★★☆☆</div>
-                                    <p class="product-price mb-0">$349</p>
+                        <div class="col-12 col-md-6">
+                            <a href="product.html" class="text-decoration-none text-dark">
+                                <div class="d-flex align-items-center border p-2 mb-2">
+                                    <img src="images/product6.jpg" 
+                                        style="width:70px; height:70px; object-fit:cover;" 
+                                        class="me-3" alt="Product">
+                                    <div>
+                                        <p class="product-name mb-0 small">Outdoor Jacket</p>
+                                        <div class="star-rating" style="font-size:0.75rem;">★★★☆☆</div>
+                                        <p class="product-price mb-0 small">$349</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
                     </div>
@@ -259,9 +284,7 @@
         ↑
     </button>
 
-    <!-- Bootstrap JS -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- Custom JS -->
     <script src="js/custom.js"></script>
 
 </body>
