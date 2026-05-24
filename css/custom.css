@@ -1,0 +1,59 @@
+/* ================================================
+   BIT703 - Assessment 2
+   Arleia Hebberd - Student Number: 5030710
+   ================================================ */
+
+/* -- Colour variables, change brand colours here -- */
+:root {
+    --primary-colour: #2d5f6b;
+    --secondary-colour: #4a7fa5;
+    --accent-colour: #e8f4f8;
+    --dark-colour: #1a3a42;
+    --text-colour: #333333;
+    --light-text: #666666;
+}
+
+/* -- General body settings -- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-colour);
+    background-color: #ffffff;
+}
+
+/* -- Makes all links use our brand colour -- */
+a {
+    color: var(--primary-colour);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--secondary-colour);
+}
+
+/* -- Main brand button style -- */
+.btn-brand {
+    background-color: var(--primary-colour);
+    color: #ffffff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+}
+
+.btn-brand:hover {
+    background-color: var(--dark-colour);
+    color: #ffffff;
+}
+
+/* -- Section spacing, controls gap between page sections -- */
+.section-padding {
+    padding: 60px 0;
+}
+
+/* -- Section headings style -- */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-colour);
+    margin-bottom: 30px;
+    text-align: center;
+}
