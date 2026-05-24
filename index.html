@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ================================================
+         BIT703 - Assessment 2
+         Arleia Hebberd - Student Number: 5030710
+         Page: Home Page (index.html)
+         ================================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aotearoa Adventure Gear</title>
+
+    <!-- Bootstrap CSS - stored locally as required -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Our custom styles -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+    <!-- == NAVBAR == -->
+    <nav class="navbar navbar-expand-lg" style="background-color: var(--primary-colour);">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Aotearoa Adventure Gear" height="50">
+            </a>
+
+            <!-- Mobile toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Help</a></li>
+                </ul>
+                <!-- Cart button -->
+                <a href="cart.html" class="btn btn-light ms-3">🛒 Your Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- == HERO SECTION == -->
+    <section class="hero-section text-center py-5" style="background-color: var(--accent-colour);">
+        <div class="container">
+            <h1 class="hero-title">New Zealand's Premier Adventure Gear Store</h1>
+            <hr class="mx-auto" style="width: 60px; border-top: 3px solid var(--primary-colour);">
+
+            <!-- Three featured images in a row -->
+            <div class="row justify-content-center my-4">
+                <div class="col-12 col-sm-4 mb-3">
+                    <img src="images/hero1.jpg" alt="Adventure Gear" class="img-fluid rounded">
+                </div>
+                <div class="col-12 col-sm-4 mb-3">
+                    <img src="images/hero2.jpg" alt="Outdoor Equipment" class="img-fluid rounded">
+                </div>
+                <div class="col-12 col-sm-4 mb-3">
+                    <img src="images/hero3.jpg" alt="Camping Gear" class="img-fluid rounded">
+                </div>
+            </div>
+
+            <!-- Shop now button -->
+            <a href="shop.html" class="btn btn-brand btn-lg">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- == FEATURED PRODUCTS CAROUSEL == -->
+    <section class="section-padding" style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+
+            <!-- Bootstrap carousel for featured products -->
+            <div id="featuredCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-5 mx-2">
+                                <div class="card product-card">
+                                    <img src="images/product1.jpg" class="card-img-top" alt="Product 1">
+                                    <div class="card-body text-center">
+                                        <p class="product-name">Alpine Hiking Pack</p>
+                                        <p class="product-price">$299</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-5 mx-2">
+                                <div class="card product-card">
+                                    <img src="images/product2.jpg" class="card-img-top" alt="Product 2">
+                                    <div class="card-body text-center">
+                                        <p class="product-name">Trail Running Shoes</p>
+                                        <p class="product-price">$189</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-5 mx-2">
+                                <div class="card product-card">
+                                    <img src="images/product3.jpg" class="card-img-top" alt="Product 3">
+                                    <div class="card-body text-center">
+                                        <p class="product-name">Waterproof Tent</p>
+                                        <p class="product-price">$549</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-5 mx-2">
+                                <div class="card product-card">
+                                    <img src="images/product4.jpg" class="card-img-top" alt="Product 4">
+                                    <div class="card-body text-center">
+                                        <p class="product-name">Sleeping Bag</p>
+                                        <p class="product-price">$229</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Carousel controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- == NEWSLETTER SECTION == -->
+    <section class="section-padding" style="background-color: var(--accent-colour);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 mb-3">
+                    <h3>Newsletter</h3>
+                    <p class="text-muted">Sign up for the latest gear, adventures and exclusive deals from Aotearoa Adventure Gear.</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- Newsletter form - validation handled in custom-validation.js -->
+                    <div class="input-group">
+                        <input type="email" id="newsletterEmail" class="form-control" placeholder="Email Address" required>
+                        <button class="btn btn-brand" onclick="subscribeNewsletter()">Subscribe</button>
+                    </div>
+                    <small id="newsletterError" class="text-danger"></small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- == PRODUCT GRID SECTION == -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <!-- Left side large product -->
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="images/product1.jpg" class="card-img-top" alt="Featured Product">
+                        <div class="card-body">
+                            <p class="product-name">Alpine Hiking Pack</p>
+                            <div class="star-rating">★★★☆☆</div>
+                            <p class="product-price">$299</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side grid of 4 products -->
+                <div class="col-12 col-md-8">
+                    <div class="row">
+                        <div class="col-6 mb-4">
+                            <div class="card product-card">
+                                <img src="images/product2.jpg" class="card-img-top" alt="Product">
+                                <div class="card-body">
+                                    <p class="product-name">Trail Shoes</p>
+                                    <div class="star-rating">★★★☆☆</div>
+                                    <p class="product-price">$189</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card product-card">
+                                <img src="images/product3.jpg" class="card-img-top" alt="Product">
+                                <div class="card-body">
+                                    <p class="product-name">Waterproof Tent</p>
+                                    <div class="star-rating">★★★☆☆</div>
+                                    <p class="product-price">$549</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card product-card">
+                                <img src="images/product4.jpg" class="card-img-top" alt="Product">
+                                <div class="card-body">
+                                    <p class="product-name">Sleeping Bag</p>
+                                    <div class="star-rating">★★★☆☆</div>
+                                    <p class="product-price">$229</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card product-card">
+                                <img src="images/product5.jpg" class="card-img-top" alt="Product">
+                                <div class="card-body">
+                                    <p class="product-name">Climbing Rope</p>
+                                    <div class="star-rating">★★★☆☆</div>
+                                    <p class="product-price">$149</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- == ABOUT SECTION == -->
+    <section class="section-padding text-center" style="background-color: var(--accent-colour);">
+        <div class="container">
+            <h2 class="section-title">About Your Shop</h2>
+            <p class="text-muted mx-auto" style="max-width: 600px;">Aotearoa Adventure Gear is New Zealand's premier outdoor equipment retailer, providing top quality gear for hikers, climbers, campers and all adventure enthusiasts across the motu.</p>
+        </div>
+    </section>
+
+    <!-- == FOOTER == -->
+    <footer style="background-color: var(--dark-colour); color: #ffffff;" class="py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Logo and address -->
+                <div class="col-12 col-md-3 mb-3">
+                    <img src="images/logo.png" alt="Logo" height="40">
+                    <p class="mt-2 small">123 Adventure Way, Christchurch, New Zealand</p>
+                </div>
+
+                <!-- Main menu links -->
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>MAIN MENU</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">About</a></li>
+                        <li><a href="shop.html" class="text-white">Shop</a></li>
+                        <li><a href="#" class="text-white">Help</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company links -->
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>COMPANY</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white">The Company</a></li>
+                        <li><a href="#" class="text-white">Careers</a></li>
+                        <li><a href="#" class="text-white">Press</a></li>
+                    </ul>
+                </div>
+
+                <!-- Discover links -->
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>DISCOVER</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white">The Team</a></li>
+                        <li><a href="#" class="text-white">Our History</a></li>
+                        <li><a href="#" class="text-white">Brand Motto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social links -->
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>FIND US ON</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white">Facebook</a></li>
+                        <li><a href="#" class="text-white">Twitter</a></li>
+                        <li><a href="#" class="text-white">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom footer line -->
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <p class="text-center small mb-0">© Aotearoa Adventure Gear</p>
+        </div>
+    </footer>
+
+    <!-- Floating back to top button - appears when scrolling down -->
+    <button id="backToTop" onclick="scrollToTop()" class="btn btn-brand" 
+        style="position:fixed; bottom:30px; right:30px; display:none; border-radius:50%; width:50px; height:50px;">
+        ↑
+    </button>
+
+    <!-- Bootstrap JS - needed for carousel and navbar toggle -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Our custom JavaScript -->
+    <script src="js/custom.js"></script>
+
+</body>
+</html>
