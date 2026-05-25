@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ================================================
+         BIT703 - Assessment 2
+         Arleia Hebberd - Student Number: 5030710
+         Page: Shipping Details (shipping.html)
+         ================================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Details - Aotearoa Adventure Gear</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+    <!-- == NAVBAR == -->
+    <nav class="navbar navbar-expand-lg" style="background-color: var(--primary-colour);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Aotearoa Adventure Gear">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <input class="form-control me-2 ms-3" type="search" id="searchBar" placeholder="Search..." style="max-width: 250px;">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="underconstruction.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="underconstruction.html">Help</a></li>
+                </ul>
+                <a href="cart.html" class="btn btn-light ms-3">Your Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-wrap">
+
+        <!-- == CHECKOUT STEPPER == -->
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex align-items-center border-bottom pb-3">
+                        <div class="text-center flex-fill">
+                            <span class="text-muted">1. Shopping Cart</span>
+                        </div>
+                        <div class="text-center flex-fill">
+                            <span class="fw-bold" style="color: var(--primary-colour); border-bottom: 3px solid var(--primary-colour); padding-bottom: 8px;">
+                                2. Shipping Details
+                            </span>
+                        </div>
+                        <div class="text-center flex-fill">
+                            <span class="text-muted">3. Payment Options</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- == SHIPPING CONTENT == -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Left side - shipping form -->
+                    <div class="col-12 col-md-7 mb-4">
+                        <h3>Shipping Details</h3>
+
+                        <form id="shippingForm" novalidate>
+
+                            <!-- Name fields -->
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <input type="text" id="firstName" class="form-control"
+                                        placeholder="First Name" required>
+                                    <small id="firstNameError" class="text-danger"></small>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" id="lastName" class="form-control"
+                                        placeholder="Last Name" required>
+                                    <small id="lastNameError" class="text-danger"></small>
+                                </div>
+                            </div>
+
+                            <!-- Address -->
+                            <div class="mb-3">
+                                <input type="text" id="address" class="form-control"
+                                    placeholder="Address" required>
+                                <small id="addressError" class="text-danger"></small>
+                            </div>
+
+                            <!-- Address 2 -->
+                            <div class="mb-3">
+                                <input type="text" id="address2" class="form-control"
+                                    placeholder="Address 2">
+                            </div>
+
+                            <!-- Country and City -->
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <select id="country" class="form-select" required>
+                                        <option value="">Country</option>
+                                        <option value="NZ">New Zealand</option>
+                                        <option value="AU">Australia</option>
+                                        <option value="GB">United Kingdom</option>
+                                        <option value="US">United States</option>
+                                    </select>
+                                    <small id="countryError" class="text-danger"></small>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" id="city" class="form-control"
+                                        placeholder="City" required>
+                                    <small id="cityError" class="text-danger"></small>
+                                </div>
+                            </div>
+
+                            <!-- Postcode and Phone -->
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <input type="text" id="postcode" class="form-control"
+                                        placeholder="Zip/Postal Code"
+                                        pattern="[0-9]{4}"
+                                        maxlength="4"
+                                        required>
+                                    <small id="postcodeError" class="text-danger"></small>
+                                </div>
+                                <div class="col-6">
+                                    <input type="tel" id="phone" class="form-control"
+                                        placeholder="Phone Number" required>
+                                    <small id="phoneError" class="text-danger"></small>
+                                </div>
+                            </div>
+
+                            <!-- Shipping options -->
+                            <div class="row mb-4">
+                                <div class="col-6">
+                                    <div class="border p-3" id="freeShippingOption" style="background-color: var(--accent-colour);">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio"
+                                                name="shippingOption"
+                                                id="freeShipping"
+                                                value="free"
+                                                checked>
+                                            <label class="form-check-label fw-bold" for="freeShipping">
+                                                Free Shipping
+                                            </label>
+                                        </div>
+                                        <small class="text-muted">Between 2 - 5 working days</small>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="border p-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio"
+                                                name="shippingOption"
+                                                id="expressShipping"
+                                                value="express">
+                                            <label class="form-check-label fw-bold" for="expressShipping">
+                                                Next Day Delivery - $20
+                                            </label>
+                                        </div>
+                                        <small class="text-muted">24 hours from checkout</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Free shipping notice shown by JS when total over $600 -->
+                            <div id="freeShippingNotice" class="alert alert-success d-none">
+                                Your order qualifies for free shipping!
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="d-flex gap-3 mt-2">
+                                <button type="button" class="btn btn-brand px-4"
+                                    onclick="validateShippingForm()">Next</button>
+                                <a href="cart.html" class="btn btn-outline-secondary px-4">Cancel</a>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <!-- Right side - order summary -->
+                    <div class="col-12 col-md-4 offset-md-1">
+                        <div class="border p-4">
+                            <h4>Summary</h4>
+                            <hr>
+
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="images/product1.jpg"
+                                    style="width:60px; height:60px; object-fit:cover;"
+                                    class="me-3" alt="Product">
+                                <div>
+                                    <p class="product-name mb-0 small">Alpine Hiking Pack</p>
+                                    <p class="product-price mb-0 small">$299</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="images/product2.jpg"
+                                    style="width:60px; height:60px; object-fit:cover;"
+                                    class="me-3" alt="Product">
+                                <div>
+                                    <p class="product-name mb-0 small">Trail Running Shoes</p>
+                                    <p class="product-price mb-0 small">$189</p>
+                                </div>
+                            </div>
+
+                            <!-- Voucher section -->
+                            <div class="d-flex justify-content-between align-items-center border-top pt-3 mb-3">
+                                <span class="fw-bold small">HAVE A VOUCHER?</span>
+                                <button class="btn btn-sm" onclick="toggleVoucher()">▼</button>
+                            </div>
+                            <div id="voucherSection" class="d-none mb-3">
+                                <div class="input-group">
+                                    <input type="text" id="voucherCode" class="form-control form-control-sm" placeholder="Enter voucher code">
+                                    <button class="btn btn-brand btn-sm" onclick="applyVoucher()">Apply</button>
+                                </div>
+                                <small id="voucherMessage" class="text-success"></small>
+                            </div>
+
+                            <!-- Totals -->
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small">SUBTOTAL</span>
+                                <span class="small">$488</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small">SHIPPING</span>
+                                <span class="small" id="shippingCost">FREE</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small">TAXES</span>
+                                <span class="small">$13</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between fw-bold">
+                                <span>TOTAL</span>
+                                <span id="orderTotal">$501</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- == FOOTER == -->
+    <footer style="background-color: var(--dark-colour); color: #ffffff;" class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3 mb-3">
+                    <img src="images/logo.png" alt="Logo" height="40">
+                    <p class="mt-2 small">123 Adventure Way, Christchurch, New Zealand</p>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>MAIN MENU</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="underconstruction.html" class="text-white">About</a></li>
+                        <li><a href="shop.html" class="text-white">Shop</a></li>
+                        <li><a href="underconstruction.html" class="text-white">Help</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>COMPANY</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="underconstruction.html" class="text-white">The Company</a></li>
+                        <li><a href="underconstruction.html" class="text-white">Careers</a></li>
+                        <li><a href="underconstruction.html" class="text-white">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>DISCOVER</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="underconstruction.html" class="text-white">The Team</a></li>
+                        <li><a href="underconstruction.html" class="text-white">Our History</a></li>
+                        <li><a href="underconstruction.html" class="text-white">Brand Motto</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>FIND US ON</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="https://www.facebook.com" target="_blank" class="text-white">Facebook</a></li>
+                        <li><a href="https://www.twitter.com" target="_blank" class="text-white">Twitter</a></li>
+                        <li><a href="https://www.instagram.com" target="_blank" class="text-white">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <p class="text-center small mb-0">© Aotearoa Adventure Gear</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" onclick="scrollToTop()" class="btn btn-brand"
+        style="position:fixed; bottom:30px; right:30px; display:none; border-radius:50%; width:50px; height:50px;">
+        ^
+    </button>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/custom-validation.js"></script>
+
+</body>
+</html>

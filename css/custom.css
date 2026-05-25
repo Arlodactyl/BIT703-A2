@@ -19,6 +19,14 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-colour);
     background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* -- Makes content push footer to bottom -- */
+.content-wrap {
+    flex: 1;
 }
 
 /* -- Makes all links use our brand colour -- */
