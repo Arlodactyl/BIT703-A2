@@ -175,4 +175,14 @@ a:hover {
     .section-padding {
         padding: 40px 0;
     }
+    /* -- Makes sure footer always sits at the bottom of the page, had issue on cart page -- */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main, section {
+    flex: 1;
+}
 }
