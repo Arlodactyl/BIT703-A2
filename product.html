@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ================================================
+         BIT703 - Assessment 2
+         Arleia Hebberd - Student Number: 5030710
+         Page: Product Detail Page (product.html)
+         ================================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine Hiking Pack - Aotearoa Adventure Gear</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+    <!-- == NAVBAR == -->
+    <nav class="navbar navbar-expand-lg" style="background-color: var(--primary-colour);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Aotearoa Adventure Gear">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <input class="form-control me-2 ms-3" type="search" id="searchBar" placeholder="Search..." style="max-width: 250px;">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Help</a></li>
+                </ul>
+                <a href="cart.html" class="btn btn-light ms-3">Your Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- == PRODUCT DETAIL SECTION == -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+
+                <!-- Left side - product image -->
+                <div class="col-12 col-md-6 mb-4" style="background-color: var(--accent-colour);">
+                    <img src="images/product1.jpg" 
+                        class="img-fluid w-100" 
+                        style="height: 400px; object-fit: cover;" 
+                        alt="Alpine Hiking Pack">
+                </div>
+
+                <!-- Right side - product info -->
+                <div class="col-12 col-md-6 mb-4 ps-md-5">
+                    <h1 style="color: var(--text-colour); font-size: 2rem;">Alpine Hiking Pack</h1>
+                    
+                    <!-- Star rating and review count -->
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="star-rating me-2">★★★☆☆</span>
+                        <small class="text-muted">5 reviews</small>
+                    </div>
+                    
+                    <hr>
+
+                    <!-- Price and model selector -->
+                    <div class="d-flex align-items-center mb-3">
+                        <h2 class="me-4" style="color: var(--text-colour);">$299</h2>
+                        <!-- Model dropdown - validation handled in custom-validation.js -->
+                        <select id="modelSelect" class="form-select" style="max-width: 200px;">
+                            <option value="">Select Model</option>
+                            <option value="small">Small - 30L</option>
+                            <option value="medium">Medium - 45L</option>
+                            <option value="large">Large - 65L</option>
+                        </select>
+                    </div>
+
+                    <!-- Product description -->
+                    <p class="text-muted">The Alpine Hiking Pack is built for serious adventurers tackling New Zealand's most demanding trails. Featuring a lightweight frame, multiple compartments and a hydration sleeve, this pack keeps you organised and comfortable on the track.</p>
+                    
+                    <hr>
+
+                    <!-- Add to cart button -->
+                    <button class="btn btn-brand btn-lg" onclick="addToCart('Alpine Hiking Pack', 299)">
+                        Add To Cart
+                    </button>
+                    <small id="cartMessage" class="d-block mt-2 text-success"></small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- == SIMILAR PRODUCTS == -->
+    <section class="section-padding" style="border-top: 1px solid #dee2e6;">
+        <div class="container">
+            <h2 class="section-title">Similar Products</h2>
+
+            <div class="row">
+                <!-- Similar product 1 -->
+                <div class="col-12 col-md-4 mb-4">
+                    <a href="product.html" class="text-decoration-none text-dark">
+                        <div class="d-flex align-items-center border p-2">
+                            <img src="images/product2.jpg" 
+                                style="width:80px; height:80px; object-fit:cover;" 
+                                class="me-3" alt="Product">
+                            <div>
+                                <p class="product-name mb-0">Trail Running Shoes</p>
+                                <div class="star-rating" style="font-size:0.8rem;">★★★☆☆</div>
+                                <p class="product-price mb-0">$189</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Similar product 2 -->
+                <div class="col-12 col-md-4 mb-4">
+                    <a href="product.html" class="text-decoration-none text-dark">
+                        <div class="d-flex align-items-center border p-2">
+                            <img src="images/product4.jpg" 
+                                style="width:80px; height:80px; object-fit:cover;" 
+                                class="me-3" alt="Product">
+                            <div>
+                                <p class="product-name mb-0">Sleeping Bag</p>
+                                <div class="star-rating" style="font-size:0.8rem;">★★★☆☆</div>
+                                <p class="product-price mb-0">$229</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Similar product 3 -->
+                <div class="col-12 col-md-4 mb-4">
+                    <a href="product.html" class="text-decoration-none text-dark">
+                        <div class="d-flex align-items-center border p-2">
+                            <img src="images/product6.jpg" 
+                                style="width:80px; height:80px; object-fit:cover;" 
+                                class="me-3" alt="Product">
+                            <div>
+                                <p class="product-name mb-0">Outdoor Jacket</p>
+                                <div class="star-rating" style="font-size:0.8rem;">★★★☆☆</div>
+                                <p class="product-price mb-0">$349</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- == REVIEWS SECTION == -->
+    <section class="section-padding" style="border-top: 1px solid #dee2e6;">
+        <div class="container">
+            <h2>Reviews</h2>
+
+            <!-- Review 1 -->
+            <div class="row py-3" style="border-bottom: 1px solid #dee2e6;">
+                <div class="col-12 col-md-3 mb-2">
+                    <div class="d-flex align-items-center">
+                        <!-- Reviewer avatar -->
+                        <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center me-3"
+                            style="width:50px; height:50px; color:white; font-size:1.2rem;">
+                            J
+                        </div>
+                        <div>
+                            <p class="fw-bold mb-0">John Doe</p>
+                            <small class="text-muted">August 14, 2024</small>
+                            <div class="star-rating" style="font-size:0.8rem;">★★★★☆</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-9">
+                    <p class="text-muted">Absolutely love this pack. Used it on the Routeburn Track and it handled everything I threw at it. The hip belt is comfortable even after long days on the trail and the hydration sleeve fits my 3L bladder perfectly.</p>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="row py-3">
+                <div class="col-12 col-md-3 mb-2">
+                    <div class="d-flex align-items-center">
+                        <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center me-3"
+                            style="width:50px; height:50px; color:white; font-size:1.2rem;">
+                            S
+                        </div>
+                        <div>
+                            <p class="fw-bold mb-0">Sarah Mitchell</p>
+                            <small class="text-muted">March 2, 2024</small>
+                            <div class="star-rating" style="font-size:0.8rem;">★★★☆☆</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-9">
+                    <p class="text-muted">Good quality pack, very sturdy and well made. The only reason I gave it three stars is the back panel gets quite warm on hot days. Would still recommend for anyone doing multi-day hikes in New Zealand.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- == FOOTER == -->
+    <footer style="background-color: var(--dark-colour); color: #ffffff;" class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3 mb-3">
+                    <img src="images/logo.png" alt="Logo" height="40">
+                    <p class="mt-2 small">123 Adventure Way, Christchurch, New Zealand</p>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>MAIN MENU</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">About</a></li>
+                        <li><a href="shop.html" class="text-white">Shop</a></li>
+                        <li><a href="#" class="text-white">Help</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>COMPANY</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white">The Company</a></li>
+                        <li><a href="#" class="text-white">Careers</a></li>
+                        <li><a href="#" class="text-white">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>DISCOVER</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white">The Team</a></li>
+                        <li><a href="#" class="text-white">Our History</a></li>
+                        <li><a href="#" class="text-white">Brand Motto</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>FIND US ON</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white">Facebook</a></li>
+                        <li><a href="#" class="text-white">Twitter</a></li>
+                        <li><a href="#" class="text-white">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <p class="text-center small mb-0">© Aotearoa Adventure Gear</p>
+        </div>
+    </footer>
+
+    <!-- Floating back to top button -->
+    <button id="backToTop" onclick="scrollToTop()" class="btn btn-brand"
+        style="position:fixed; bottom:30px; right:30px; display:none; border-radius:50%; width:50px; height:50px;">
+        ^
+    </button>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/custom-validation.js"></script>
+
+</body>
+</html>
