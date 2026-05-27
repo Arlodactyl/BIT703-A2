@@ -171,6 +171,9 @@
                                 Your order qualifies for free shipping!
                             </div>
 
+                            <!-- Progress nudge shown by JS when total under $600 -->
+                            <small id="freeShippingProgress" class="text-muted"></small>
+
                             <!-- Buttons -->
                             <div class="d-flex gap-3 mt-2">
                                 <button type="button" class="btn btn-brand px-4"
@@ -187,25 +190,8 @@
                             <h4>Summary</h4>
                             <hr>
 
-                            <div class="d-flex align-items-center mb-3">
-                                <img src="images/product1.jpg"
-                                    style="width:60px; height:60px; object-fit:cover;"
-                                    class="me-3" alt="Product">
-                                <div>
-                                    <p class="product-name mb-0 small">Alpine Hiking Pack</p>
-                                    <p class="product-price mb-0 small">$299</p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex align-items-center mb-3">
-                                <img src="images/product2.jpg"
-                                    style="width:60px; height:60px; object-fit:cover;"
-                                    class="me-3" alt="Product">
-                                <div>
-                                    <p class="product-name mb-0 small">Trail Running Shoes</p>
-                                    <p class="product-price mb-0 small">$189</p>
-                                </div>
-                            </div>
+                            <!-- Order items rendered from localStorage by renderOrderSummary() -->
+                            <div id="orderItems"></div>
 
                             <!-- Voucher section -->
                             <div class="d-flex justify-content-between align-items-center border-top pt-3 mb-3">
@@ -220,10 +206,14 @@
                                 <small id="voucherMessage" class="text-success"></small>
                             </div>
 
-                            <!-- Totals -->
+                            <!-- Totals — populated by updateSummaryTotals() -->
                             <div class="d-flex justify-content-between mb-2">
                                 <span class="small">SUBTOTAL</span>
-                                <span class="small">$488</span>
+                                <span class="small" id="summarySubtotal">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2 d-none text-success" id="summaryDiscountRow">
+                                <span class="small">DISCOUNT (10%)</span>
+                                <span class="small" id="summaryDiscount">-$0.00</span>
                             </div>
                             <div class="d-flex justify-content-between mb-2">
                                 <span class="small">SHIPPING</span>
@@ -231,12 +221,12 @@
                             </div>
                             <div class="d-flex justify-content-between mb-2">
                                 <span class="small">TAXES</span>
-                                <span class="small">$13</span>
+                                <span class="small" id="summaryTaxes">$0.00</span>
                             </div>
                             <hr>
                             <div class="d-flex justify-content-between fw-bold">
                                 <span>TOTAL</span>
-                                <span id="orderTotal">$501</span>
+                                <span id="summaryTotal">$0.00</span>
                             </div>
                         </div>
                     </div>

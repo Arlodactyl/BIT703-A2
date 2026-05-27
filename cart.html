@@ -69,65 +69,10 @@
                 <div class="col-12 col-md-7 mb-4">
                     <h3>Shopping Cart</h3>
 
-                    <!-- Cart item 1 -->
-                    <div class="d-flex align-items-center border p-3 mb-3">
-                        <img src="images/product1.jpg"
-                            style="width:80px; height:80px; object-fit:cover;"
-                            class="me-3" alt="Product">
-                        <div class="flex-grow-1">
-                            <p class="product-name mb-1">Alpine Hiking Pack</p>
-                            <small class="text-muted">Lightweight pack for multi-day adventures</small>
-                            <p class="product-price mb-0">$299</p>
-                        </div>
-                        <!-- Quantity spinner -->
-                        <div class="d-flex flex-column align-items-center ms-3">
-                            <input type="number"
-                                id="qty1"
-                                class="form-control text-center cart-qty"
-                                value="1"
-                                min="1"
-                                max="99"
-                                style="width:70px;"
-                                data-price="299"
-                                onchange="updateCartTotal()">
-                        </div>
-                        <!-- Remove button -->
-                        <button class="btn btn-link text-danger ms-3 p-0"
-                            onclick="removeCartItem(this)"
-                            title="Remove item"
-                            style="font-size:1.2rem; line-height:1;">&#x2715;</button>
-                    </div>
+                    <!-- Cart items are injected here by renderCart() in custom.js -->
+                    <div id="cartItems"></div>
 
-                    <!-- Cart item 2 -->
-                    <div class="d-flex align-items-center border p-3 mb-3">
-                        <img src="images/product2.jpg"
-                            style="width:80px; height:80px; object-fit:cover;"
-                            class="me-3" alt="Product">
-                        <div class="flex-grow-1">
-                            <p class="product-name mb-1">Trail Running Shoes</p>
-                            <small class="text-muted">Built for New Zealand's rugged terrain</small>
-                            <p class="product-price mb-0">$189</p>
-                        </div>
-                        <!-- Quantity spinner -->
-                        <div class="d-flex flex-column align-items-center ms-3">
-                            <input type="number"
-                                id="qty2"
-                                class="form-control text-center cart-qty"
-                                value="1"
-                                min="1"
-                                max="99"
-                                style="width:70px;"
-                                data-price="189"
-                                onchange="updateCartTotal()">
-                        </div>
-                        <!-- Remove button -->
-                        <button class="btn btn-link text-danger ms-3 p-0"
-                            onclick="removeCartItem(this)"
-                            title="Remove item"
-                            style="font-size:1.2rem; line-height:1;">&#x2715;</button>
-                    </div>
-
-                    <!-- Empty cart message (hidden until all items removed) -->
+                    <!-- Shown by JS when the cart is empty -->
                     <div id="emptyCartMsg" class="d-none text-center py-5 text-muted">
                         <p class="fs-5">Your cart is empty.</p>
                         <a href="shop.html" class="btn btn-brand">Continue Shopping</a>
@@ -159,20 +104,27 @@
                         <!-- Order totals -->
                         <div class="d-flex justify-content-between mb-2">
                             <span>SUBTOTAL</span>
-                            <span id="subtotal">$488</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2 d-none text-success" id="discountRow">
+                            <span>DISCOUNT (10%)</span>
+                            <span id="discount">-$0.00</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>SHIPPING</span>
-                            <span id="shipping">FREE</span>
+                            <span id="shipping" class="text-muted">Calculated at next step</span>
+                        </div>
+                        <div class="mb-2">
+                            <small id="freeShippingProgress" class="text-muted"></small>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>TAXES</span>
-                            <span id="taxes">$13</span>
+                            <span id="taxes">$0.00</span>
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between fw-bold">
                             <span>TOTAL</span>
-                            <span id="total">$501</span>
+                            <span id="total">$0.00</span>
                         </div>
                     </div>
                 </div>

@@ -194,3 +194,98 @@ main, section {
     flex: 1;
 }
 }
+
+/* ================================================
+   SEARCH DROPDOWN
+   Live suggestions that appear below the navbar
+   search bar as the user types
+   ================================================ */
+.search-wrapper {
+    position: relative;
+    max-width: 250px;
+    flex-shrink: 0;
+}
+
+.search-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    z-index: 1055;
+    max-height: 360px;
+    overflow-y: auto;
+    display: none;
+}
+
+.search-dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    text-decoration: none;
+    color: var(--text-colour);
+    transition: background 0.15s;
+}
+
+.search-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.search-dropdown-item:hover,
+.search-dropdown-item.active {
+    background-color: var(--accent-colour);
+    color: var(--text-colour);
+    text-decoration: none;
+}
+
+.search-dropdown-item img {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.search-dropdown-item .item-name {
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 2px;
+}
+
+.search-dropdown-item .item-price {
+    font-size: 0.8rem;
+    color: var(--primary-colour);
+}
+
+.search-no-results {
+    padding: 12px;
+    color: var(--light-text);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* ================================================
+   PRODUCT CARD LINKS
+   Makes home page product cards clickable
+   ================================================ */
+.product-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-card-link:hover .product-card {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.product-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
