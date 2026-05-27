@@ -81,16 +81,21 @@
                         </div>
                         <!-- Quantity spinner -->
                         <div class="d-flex flex-column align-items-center ms-3">
-                            <input type="number" 
-                                id="qty1" 
-                                class="form-control text-center cart-qty" 
-                                value="1" 
-                                min="1" 
+                            <input type="number"
+                                id="qty1"
+                                class="form-control text-center cart-qty"
+                                value="1"
+                                min="1"
                                 max="99"
                                 style="width:70px;"
                                 data-price="299"
                                 onchange="updateCartTotal()">
                         </div>
+                        <!-- Remove button -->
+                        <button class="btn btn-link text-danger ms-3 p-0"
+                            onclick="removeCartItem(this)"
+                            title="Remove item"
+                            style="font-size:1.2rem; line-height:1;">&#x2715;</button>
                     </div>
 
                     <!-- Cart item 2 -->
@@ -115,6 +120,17 @@
                                 data-price="189"
                                 onchange="updateCartTotal()">
                         </div>
+                        <!-- Remove button -->
+                        <button class="btn btn-link text-danger ms-3 p-0"
+                            onclick="removeCartItem(this)"
+                            title="Remove item"
+                            style="font-size:1.2rem; line-height:1;">&#x2715;</button>
+                    </div>
+
+                    <!-- Empty cart message (hidden until all items removed) -->
+                    <div id="emptyCartMsg" class="d-none text-center py-5 text-muted">
+                        <p class="fs-5">Your cart is empty.</p>
+                        <a href="shop.html" class="btn btn-brand">Continue Shopping</a>
                     </div>
 
                     <!-- Next and Cancel buttons -->

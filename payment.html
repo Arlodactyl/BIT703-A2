@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ================================================
+         BIT703 - Assessment 2
+         Arleia Hebberd - Student Number: 5030710
+         Page: Payment Options (payment.html)
+         ================================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options - Aotearoa Adventure Gear</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+    <!-- == NAVBAR == -->
+    <nav class="navbar navbar-expand-lg" style="background-color: var(--primary-colour);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Aotearoa Adventure Gear">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <input class="form-control me-2 ms-3" type="search" id="searchBar" placeholder="Search..." style="max-width: 250px;">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="underconstruction.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="underconstruction.html">Help</a></li>
+                </ul>
+                <a href="cart.html" class="btn btn-light ms-3">Your Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-wrap">
+
+        <!-- == CHECKOUT STEPPER == -->
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex align-items-center border-bottom pb-3">
+                        <div class="text-center flex-fill">
+                            <span class="text-muted">1. Shopping Cart</span>
+                        </div>
+                        <div class="text-center flex-fill">
+                            <span class="text-muted">2. Shipping Details</span>
+                        </div>
+                        <div class="text-center flex-fill">
+                            <span class="fw-bold" style="color: var(--primary-colour); border-bottom: 3px solid var(--primary-colour); padding-bottom: 8px;">
+                                3. Payment Options
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- == PAYMENT CONTENT == -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Left side - payment form -->
+                    <div class="col-12 col-md-7 mb-4">
+                        <h3>Payment Method</h3>
+
+                        <form id="paymentForm" novalidate>
+
+                            <!-- Credit card option -->
+                            <div class="border p-4 mb-3" id="creditCardSection">
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio"
+                                        name="paymentMethod"
+                                        id="creditCard"
+                                        value="credit"
+                                        checked
+                                        onchange="togglePaymentMethod()">
+                                    <label class="form-check-label fw-bold" for="creditCard">
+                                        Credit Card
+                                    </label>
+                                </div>
+                                <p class="text-muted small">Pay securely using your Visa, Mastercard or American Express card.</p>
+
+                                <!-- Card number -->
+                                <div class="mb-3">
+                                    <div class="input-group">
+                                        <input type="text"
+                                            id="cardNumber"
+                                            class="form-control"
+                                            placeholder="0000 0000 0000 0000"
+                                            maxlength="19"
+                                            required>
+                                        <span class="input-group-text">
+                                            <small>CARD</small>
+                                        </span>
+                                    </div>
+                                    <small id="cardNumberError" class="text-danger"></small>
+                                </div>
+
+                                <!-- Expiry and CVV -->
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <input type="text"
+                                            id="cardExpiry"
+                                            class="form-control"
+                                            placeholder="MM / YY"
+                                            maxlength="5"
+                                            required>
+                                        <small id="cardExpiryError" class="text-danger"></small>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="input-group">
+                                            <input type="text"
+                                                id="cardCvv"
+                                                class="form-control"
+                                                placeholder="CVV"
+                                                maxlength="4"
+                                                required>
+                                            <span class="input-group-text">
+                                                <small>i</small>
+                                            </span>
+                                        </div>
+                                        <small id="cardCvvError" class="text-danger"></small>
+                                    </div>
+                                </div>
+
+                                <!-- Cardholder name -->
+                                <div class="mb-3">
+                                    <input type="text"
+                                        id="cardName"
+                                        class="form-control"
+                                        placeholder="Card Holder Name"
+                                        required>
+                                    <small id="cardNameError" class="text-danger"></small>
+                                </div>
+                            </div>
+
+                            <!-- PayPal option -->
+                            <div class="border p-4 mb-4">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio"
+                                            name="paymentMethod"
+                                            id="paypal"
+                                            value="paypal"
+                                            onchange="togglePaymentMethod()">
+                                        <label class="form-check-label fw-bold" for="paypal">
+                                            PayPal
+                                        </label>
+                                    </div>
+                                    <!-- PayPal logo text -->
+                                    <span style="color: #003087; font-weight: bold; font-size: 1.2rem;">
+                                        Pay<span style="color: #009cde;">Pal</span>
+                                    </span>
+                                </div>
+                                <p class="text-muted small mt-2">Pay safely and securely using your PayPal account. You will be redirected to PayPal to complete your payment.</p>
+                            </div>
+
+                            <!-- Pay now and cancel buttons -->
+                            <div class="d-flex gap-3">
+                                <button type="button" class="btn btn-brand px-4"
+                                    onclick="validatePaymentForm()">Pay Now</button>
+                                <a href="shipping.html" class="btn btn-outline-secondary px-4">Cancel</a>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <!-- Right side - order summary -->
+                    <div class="col-12 col-md-4 offset-md-1">
+                        <div class="border p-4">
+                            <h4>Summary</h4>
+                            <hr>
+
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="images/product1.jpg"
+                                    style="width:60px; height:60px; object-fit:cover;"
+                                    class="me-3" alt="Product">
+                                <div>
+                                    <p class="product-name mb-0 small">Alpine Hiking Pack</p>
+                                    <p class="product-price mb-0 small">$299</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="images/product2.jpg"
+                                    style="width:60px; height:60px; object-fit:cover;"
+                                    class="me-3" alt="Product">
+                                <div>
+                                    <p class="product-name mb-0 small">Trail Running Shoes</p>
+                                    <p class="product-price mb-0 small">$189</p>
+                                </div>
+                            </div>
+
+                            <!-- Voucher section -->
+                            <div class="d-flex justify-content-between align-items-center border-top pt-3 mb-3">
+                                <span class="fw-bold small">HAVE A VOUCHER?</span>
+                                <button class="btn btn-sm" onclick="toggleVoucher()">▼</button>
+                            </div>
+                            <div id="voucherSection" class="d-none mb-3">
+                                <div class="input-group">
+                                    <input type="text" id="voucherCode" class="form-control form-control-sm" placeholder="Enter voucher code">
+                                    <button class="btn btn-brand btn-sm" onclick="applyVoucher()">Apply</button>
+                                </div>
+                                <small id="voucherMessage" class="text-success"></small>
+                            </div>
+
+                            <!-- Totals -->
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small">SUBTOTAL</span>
+                                <span class="small">$488</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small">SHIPPING</span>
+                                <span class="small">FREE</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small">TAXES</span>
+                                <span class="small">$13</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between fw-bold">
+                                <span>TOTAL</span>
+                                <span>$501</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- == FOOTER == -->
+    <footer style="background-color: var(--dark-colour); color: #ffffff;" class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3 mb-3">
+                    <img src="images/logo.png" alt="Logo" height="40">
+                    <p class="mt-2 small">123 Adventure Way, Christchurch, New Zealand</p>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>MAIN MENU</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="underconstruction.html" class="text-white">About</a></li>
+                        <li><a href="shop.html" class="text-white">Shop</a></li>
+                        <li><a href="underconstruction.html" class="text-white">Help</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>COMPANY</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="underconstruction.html" class="text-white">The Company</a></li>
+                        <li><a href="underconstruction.html" class="text-white">Careers</a></li>
+                        <li><a href="underconstruction.html" class="text-white">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>DISCOVER</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="underconstruction.html" class="text-white">The Team</a></li>
+                        <li><a href="underconstruction.html" class="text-white">Our History</a></li>
+                        <li><a href="underconstruction.html" class="text-white">Brand Motto</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6>FIND US ON</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="https://www.facebook.com" target="_blank" class="text-white">Facebook</a></li>
+                        <li><a href="https://www.twitter.com" target="_blank" class="text-white">Twitter</a></li>
+                        <li><a href="https://www.instagram.com" target="_blank" class="text-white">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <p class="text-center small mb-0">© Aotearoa Adventure Gear</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" onclick="scrollToTop()" class="btn btn-brand"
+        style="position:fixed; bottom:30px; right:30px; display:none; border-radius:50%; width:50px; height:50px;">
+        ^
+    </button>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/custom-validation.js"></script>
+
+</body>
+</html>
