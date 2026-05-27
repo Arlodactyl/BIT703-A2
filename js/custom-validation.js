@@ -140,7 +140,7 @@ function validatePaymentForm() {
     /* -- Card number check - must be 16 digits -- */
     var cardNumber = document.getElementById('cardNumber');
     var cardNumberError = document.getElementById('cardNumberError');
-    var cardNumberClean = cardNumber.value.replace(/\s/g, '');
+    var cardNumberClean = cardNumber.value.replace(/\s/g, ''); // strip spaces first
     var cardNumberRegex = /^[0-9]{16}$/;
     if (cardNumber.value.trim() === '') {
         cardNumberError.textContent = 'Card number is required';

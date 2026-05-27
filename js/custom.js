@@ -26,12 +26,12 @@ function saveCart(cart) {
 
 /* -- Full product catalogue used for search suggestions -- */
 var PRODUCT_CATALOGUE = [
-    { name: 'Alpine Hiking Pack',  price: '$299', image: 'images/product1.jpg', url: 'product.html' },
+    { name: 'Alpine Hiking Pack', price: '$299', image: 'images/product1.jpg', url: 'product.html' },
     { name: 'Trail Running Shoes', price: '$189', image: 'images/product2.jpg', url: 'product.html' },
-    { name: 'Waterproof Tent',     price: '$549', image: 'images/product3.jpg', url: 'product.html' },
-    { name: 'Sleeping Bag',        price: '$229', image: 'images/product4.jpg', url: 'product.html' },
-    { name: 'Climbing Rope',       price: '$149', image: 'images/product5.jpg', url: 'product.html' },
-    { name: 'Outdoor Jacket',      price: '$349', image: 'images/product6.jpg', url: 'product.html' }
+    { name: 'Waterproof Tent', price: '$549', image: 'images/product3.jpg', url: 'product.html' },
+    { name: 'Sleeping Bag', price: '$229', image: 'images/product4.jpg', url: 'product.html' },
+    { name: 'Climbing Rope', price: '$149', image: 'images/product5.jpg', url: 'product.html' },
+    { name: 'Outdoor Jacket', price: '$349', image: 'images/product6.jpg', url: 'product.html' }
 ];
 
 /* -- Runs when page loads -- */
@@ -70,7 +70,7 @@ function initBackToTop() {
     });
 }
 
-/* -- Smoothly scrolls back to top when button clicked -- */
+// scroll back to top smoothly
 function scrollToTop() {
     window.scrollTo({
         top: 0,
@@ -78,7 +78,7 @@ function scrollToTop() {
     });
 }
 
-/* ====================== ==========================
+/* ================================================
    CART TOTAL CALCULATOR
    Recalculates total when quantities change
    ================================================ */
@@ -104,8 +104,10 @@ function updateCartTotal() {
         subtotal += qty * price;
     });
 
+    // console.log(subtotal);
+
     /* -- Apply ADVENTURE10 coupon if active (10% off subtotal) -- */
-    var coupon   = localStorage.getItem('aag_coupon') || '';
+    var coupon = localStorage.getItem('aag_coupon') || '';
     var discount = (coupon === 'ADVENTURE10') ? Math.round(subtotal * 0.10 * 100) / 100 : 0;
     var discountedSubtotal = subtotal - discount;
 
@@ -177,10 +179,10 @@ function checkFreeShipping() {
         });
     }
 
-    var freeShippingRadio   = document.getElementById('freeShipping');
+    var freeShippingRadio = document.getElementById('freeShipping');
     var expressShippingRadio = document.getElementById('expressShipping');
-    var freeShippingOption  = document.getElementById('freeShippingOption');
-    var freeShippingNotice  = document.getElementById('freeShippingNotice');
+    var freeShippingOption = document.getElementById('freeShippingOption');
+    var freeShippingNotice = document.getElementById('freeShippingNotice');
     var freeShippingProgress = document.getElementById('freeShippingProgress');
 
     if (subtotal >= 600) {
@@ -239,8 +241,6 @@ function checkFreeShipping() {
 
 /* ================================================
    CART BADGE
-   Shows the total item count on the Your Cart
-   button in the navbar on every page
    ================================================ */
 function initCartBadge() {
     /* -- Inject a badge span into the navbar cart button -- */
@@ -295,7 +295,7 @@ function addToCart(productName, price) {
     var cart = getCart();
     var existing = null;
     cart.forEach(function(item) {
-        if (item.name === productName && item.model === model) existing = item;
+      if (item.name === productName && item.model === model) existing = item;
     });
 
     if (existing) {
@@ -322,23 +322,23 @@ function addToCart(productName, price) {
    ================================================ */
 function renderCart() {
     var container = document.getElementById('cartItems');
-    if (!container) return; /* -- Not on cart page, nothing to do -- */
+    if (!container) return; // not on cart page
 
-    var cart    = getCart();
+    var cart = getCart();
     var emptyMsg = document.getElementById('emptyCartMsg');
-    var nextBtn  = document.querySelector('a[href="shipping.html"]');
+    var nextBtn = document.querySelector('a[href="shipping.html"]');
 
     container.innerHTML = '';
 
     if (cart.length === 0) {
         if (emptyMsg) emptyMsg.classList.remove('d-none');
-        if (nextBtn)  { nextBtn.classList.add('disabled'); nextBtn.setAttribute('aria-disabled', 'true'); }
+        if (nextBtn) { nextBtn.classList.add('disabled'); nextBtn.setAttribute('aria-disabled', 'true'); }
         updateCartTotal();
         return;
     }
 
     if (emptyMsg) emptyMsg.classList.add('d-none');
-    if (nextBtn)  { nextBtn.classList.remove('disabled'); nextBtn.removeAttribute('aria-disabled'); }
+    if (nextBtn) { nextBtn.classList.remove('disabled'); nextBtn.removeAttribute('aria-disabled'); }
 
     /* -- Build one row per cart item -- */
     cart.forEach(function(item, index) {
@@ -373,7 +373,7 @@ function renderCart() {
    ================================================ */
 function updateQty(input) {
     var index = parseInt(input.getAttribute('data-index'));
-    var qty   = parseInt(input.value);
+    var qty = parseInt(input.value);
 
     if (isNaN(qty) || qty < 1) { qty = 1; input.value = 1; }
 
@@ -422,13 +422,13 @@ function renderOrderSummary() {
    ================================================ */
 function updateSummaryTotals() {
     var subtotalEl = document.getElementById('summarySubtotal');
-    if (!subtotalEl) return; /* -- Not on a checkout summary page -- */
+    if (!subtotalEl) return; // not on a checkout page
 
-    var cart     = getCart();
+    var cart = getCart();
     var subtotal = cart.reduce(function(t, item) { return t + item.price * item.qty; }, 0);
 
     /* -- Apply ADVENTURE10 coupon if active (10% off subtotal) -- */
-    var coupon   = localStorage.getItem('aag_coupon') || '';
+    var coupon = localStorage.getItem('aag_coupon') || '';
     var discount = (coupon === 'ADVENTURE10') ? Math.round(subtotal * 0.10 * 100) / 100 : 0;
     var discountedSubtotal = subtotal - discount;
 
@@ -448,9 +448,9 @@ function updateSummaryTotals() {
     var tax = Math.round(discountedSubtotal * 0.15 * 100) / 100;
 
     /* -- Determine shipping cost -- */
-    var shippingCost  = 0;
+    var shippingCost = 0;
     var shippingLabel = 'FREE';
-    var expressRadio  = document.getElementById('expressShipping');
+    var expressRadio = document.getElementById('expressShipping');
 
     if (expressRadio) {
         /* -- Shipping page: read from the currently selected radio -- */
@@ -466,12 +466,12 @@ function updateSummaryTotals() {
 
     subtotalEl.textContent = '$' + subtotal.toFixed(2);
 
-    var taxesEl    = document.getElementById('summaryTaxes');
-    var totalEl    = document.getElementById('summaryTotal');
+    var taxesEl = document.getElementById('summaryTaxes');
+    var totalEl = document.getElementById('summaryTotal');
     var shippingEl = document.getElementById('shippingCost');
 
-    if (taxesEl)    taxesEl.textContent    = '$' + tax.toFixed(2);
-    if (totalEl)    totalEl.textContent    = '$' + total.toFixed(2);
+    if (taxesEl) taxesEl.textContent = '$' + tax.toFixed(2);
+    if (totalEl) totalEl.textContent = '$' + total.toFixed(2);
     if (shippingEl) shippingEl.textContent = shippingLabel;
 }
 
@@ -513,7 +513,7 @@ function subscribeNewsletter() {
    Also hooks the shop hero search Enter key.
    ================================================ */
 function initSearch() {
-    var navSearch  = document.getElementById('searchBar');
+    var navSearch = document.getElementById('searchBar');
     var heroSearch = document.getElementById('shopSearch');
 
     /* -- Build the dropdown for the navbar search bar -- */
